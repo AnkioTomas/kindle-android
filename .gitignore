@@ -1,0 +1,23 @@
+# 本地二进制与构建产物
+bin/*
+!bin/.gitkeep
+dist/
+system/kernel/android/*.o
+system/kernel/android/*.ko
+system/kernel/android/*.mod.c
+system/kernel/android/*.mod.o
+system/kernel/android/.*.cmd
+system/kernel/android/Module.symvers
+system/kernel/android/modules.order
+system/kernel/android/.tmp_versions/
+
+# 镜像与不进仓库的材料
+*.img
+*.sqfs
+*.so
+*.enc
+*.apk
+*.tar.gz
+license.key
+license.keys
+.DS_Store

@@ -1,0 +1,38 @@
+# 默认设置。用户改过的在 system/android/settings.conf，启动时盖上来。
+# 这个文件随版本走，不要手改。
+
+PAGE_ANIM=hw
+KFB_ANIM_STEPS=12
+KFB_CONTRAST=1.3
+KFB_DITHER=1
+KFB_LOCAL_WFM=du
+KFB_COLOR=1
+KFB_FULL_EVERY=0
+KFB_TURN_WFM=reagl
+APP_DISPLAY=
+
+KFB_GESTURES=1
+G_TAP=clear
+G_HOLD=invert
+G_HSWIPE=back
+G_VL=light
+G_VR=warmth
+G_TL=light
+G_TR=bt
+G_BL=wifi
+G_BR=sleep
+G_WINDOW=50
+G_CORNER_MS=2000
+
+ANDROID_APP=home
+RETURN_MODE=off
+AUDIO=0
+ZRAM_MB=512
+LOWMEM=auto
+KINDLE_UI=normal
+FILEBROWSER=0
+WEBVIEW_NEW=0
+SYS_FONT=
+ANDROID_DNS="223.5.5.5 223.6.6.6"
+LAN_PORTS="12121 28888 52025"
+SHARE_DIRS="books:Books fonts:Fonts"

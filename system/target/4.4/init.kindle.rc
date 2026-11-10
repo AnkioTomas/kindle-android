@@ -1,0 +1,6 @@
+on early-init
+    export LD_PRELOAD /system/lib/libkindleshim.so
+
+on post-fs-data
+    setprop ro.crypto.state unencrypted
+    trigger nonencrypted

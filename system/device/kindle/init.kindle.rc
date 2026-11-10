@@ -1,0 +1,29 @@
+import /system/etc/init
+
+on early-init
+    export LD_PRELOAD /system/lib/libkindleshim.so
+    setprop sys.usb.config none
+
+on init
+    stop ueventd
+
+# 宿主已经挂好根、/data、/cache。这里不再 mount_all。
+on post-fs-data
+    setprop ro.crypto.state unencrypted
+    trigger nonencrypted
+
+service mediacodec /system/bin/mediacodec
+    seclabel u:r:mediacodec:s0
+    class main
+    user mediacodec
+    group camera drmrpc mediadrm
+    ioprio rt 4
+    disabled
+
+service mediaextractor /system/bin/mediaextractor
+    seclabel u:r:mediaextractor:s0
+    class main
+    user mediaex
+    group drmrpc mediadrm
+    ioprio rt 4
+    disabled
