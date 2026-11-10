@@ -4,6 +4,12 @@
 
 版本：`0.1.0`。目标机器是 Paperwhite 5 这一档：用户分区是 FAT，内存不到 700MB。
 
+## 现状
+
+这是一份未完成的实验。宿主启动链、工具和 `system/device/kindle/` 设备树源码都在仓库里，但 AOSP 本身不在这里，系统镜像也没有在 Kindle 上编过、启动过。冻结没做，`pivot_init` 也不做 seccomp。仓库不带二进制。
+
+我不打算继续维护了。代码就留在这里，留给有缘人。
+
 ## 跑起来需要的东西
 
 Kindle 固件 5.18 或更新，已经越狱。把本仓库放到 Kindle 的 `/mnt/base-us/android`。Scriptlet 用户再把 `documents/home-android.sh` 拷到 `documents/`。
@@ -81,5 +87,3 @@ system/device/kindle/  →  device/kindle/
 兼容库使用自己编译的明文 `libkindleshim.so`。
 
 `kafstub` 只做一件事：`dlopen("liblipc.so")`，`LipcOpen("com.lab126.kaf")`，注册 `frameworkStarted` 读出来是 1，然后 `pause`。getter 的第三个参数是写出的 int。
-
-`pivot_init` 不做 seccomp。冻结没有做。这套系统源码没有在 Kindle 上编过，也没有启动过。
